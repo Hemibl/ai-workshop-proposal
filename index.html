@@ -227,13 +227,14 @@
   /* logo wall */
   .logowall{
     background:#fff;border:1px solid var(--line);border-radius:10px;
-    padding:30px 26px;display:grid;grid-template-columns:repeat(5,1fr);
-    gap:30px 22px;align-items:center;margin:4px 0 4px;
+    padding:34px 32px;display:flex;flex-wrap:wrap;
+    justify-content:center;align-items:center;gap:30px 46px;margin:4px 0 4px;
   }
   .logowall img{
-    display:block;margin:0 auto;max-width:100%;max-height:32px;
-    width:auto;height:auto;object-fit:contain;
+    display:block;max-height:30px;width:auto;height:auto;object-fit:contain;
+    filter:grayscale(1) opacity(.55);transition:filter .25s ease;
   }
+  .logowall img:hover{filter:grayscale(0) opacity(1);}
 
   .sig{
     margin-top:64px;padding-top:26px;border-top:2px solid var(--accent);
@@ -269,8 +270,8 @@
       width:100%;padding-top:14px;border-top:1px solid var(--line);
       font-size:13px;
     }
-    .logowall{grid-template-columns:repeat(3,1fr);gap:24px 16px;padding:22px 14px;}
-    .logowall img{max-height:26px;}
+    .logowall{gap:22px 30px;padding:24px 16px;}
+    .logowall img{max-height:24px;}
 
     .lede{font-size:16.5px;margin-top:26px;}
     h2{font-size:22px;margin:42px 0 6px;}
@@ -286,7 +287,7 @@
     .page{padding:28px 16px 32px;}
     h1{font-size:25px;}
     h2{font-size:20px;}
-    .logowall{grid-template-columns:repeat(2,1fr);}
+    .logowall{gap:20px 24px;}
   }
   @media print{
     body{background:var(--paper);padding:0;font-size:11.5pt;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
@@ -375,7 +376,6 @@
       <img src="logos/nvidia.png" alt="NVIDIA">
       <img src="logos/mastercard.png" alt="Mastercard">
       <img src="logos/citi.png" alt="Citi">
-      <img src="logos/philips.png" alt="Philips">
       <img src="logos/booking.png" alt="Booking.com">
       <img src="logos/payoneer.png" alt="Payoneer">
       <img src="logos/mobileye.png" alt="Mobileye">

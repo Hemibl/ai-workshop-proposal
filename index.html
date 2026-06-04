@@ -234,8 +234,9 @@
   .closed p{color:var(--ink-soft);font-size:16px;}
 
   /* testimonials */
-  .quotes{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px;}
+  .quotes{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-top:22px;}
   .quote{
+    flex:0 1 calc(50% - 9px);
     background:var(--card);border:1px solid var(--line);border-radius:4px;
     padding:24px 24px 20px;position:relative;
     display:flex;flex-direction:column;
@@ -273,8 +274,12 @@
   }
   .logowall img:hover{filter:grayscale(0) opacity(1);}
 
+  .closing{
+    text-align:center;font-size:17px;color:var(--ink-soft);
+    line-height:1.75;max-width:48ch;margin:60px auto 0;
+  }
   .sig{
-    margin-top:64px;padding-top:26px;border-top:2px solid var(--accent);
+    margin-top:36px;padding-top:26px;border-top:2px solid var(--accent);
     text-align:center;color:var(--muted);font-size:14px;
   }
   .sig .who-line{color:var(--muted);}
@@ -293,7 +298,9 @@
     }
     .page{padding:34px 22px 40px;}
     .page::after{inset:7px;}
-    .cards,.quotes{grid-template-columns:1fr;gap:16px;}
+    .cards{grid-template-columns:1fr;gap:16px;}
+    .quotes{gap:16px;}
+    .quote{flex-basis:100%;}
 
     .mast{
       flex-direction:column;align-items:flex-start;
@@ -373,6 +380,22 @@
     </ul>
   </section>
 
+  <section class="fx d3">
+    <h2><span class="hx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><rect x="5" y="9" width="6" height="12"/><rect x="13" y="4" width="6" height="17"/></svg></span>נציגות מחברות מובילות שהשתתפו</h2>
+    <p class="section-sub">מתוך הסדנאות והוובינרים שהעברתי:</p>
+    <div class="logowall">
+      <img src="logos/google.png" alt="Google">
+      <img src="logos/nvidia.png" alt="NVIDIA">
+      <img src="logos/mastercard.png" alt="Mastercard">
+      <img src="logos/citi.png" alt="Citi">
+      <img src="logos/booking.png" alt="Booking.com">
+      <img src="logos/payoneer.png" alt="Payoneer">
+      <img src="logos/mobileye.png" alt="Mobileye">
+      <img src="logos/checkpoint.png" alt="Check Point">
+      <img src="logos/paloalto.png" alt="Palo Alto Networks">
+    </div>
+  </section>
+
   <section class="fx d4">
     <h2><span class="hx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M12 16v4M8.5 20h7"/></svg></span>הסדנה הפתוחה</h2>
     <p class="section-sub">3 מפגשים · 3 שעות כל מפגש · hands-on · עד 15 משתתפים. שתי אפשרויות:</p>
@@ -415,19 +438,7 @@
 
   <section class="fx d6">
     <h2><span class="hx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l2.6 5.3 5.9.9-4.25 4.15 1 5.85L12 17l-5.25 2.75 1-5.85L3.5 9.7l5.9-.9z"/></svg></span>התרשמות מהסדנאות שהעברתי</h2>
-    <p class="section-sub">חלק מהחברות שנציגותיהן השתתפו בסדנאות ובוובינרים שהעברתי:</p>
-    <div class="logowall">
-      <img src="logos/google.png" alt="Google">
-      <img src="logos/nvidia.png" alt="NVIDIA">
-      <img src="logos/mastercard.png" alt="Mastercard">
-      <img src="logos/citi.png" alt="Citi">
-      <img src="logos/booking.png" alt="Booking.com">
-      <img src="logos/payoneer.png" alt="Payoneer">
-      <img src="logos/mobileye.png" alt="Mobileye">
-      <img src="logos/checkpoint.png" alt="Check Point">
-      <img src="logos/paloalto.png" alt="Palo Alto Networks">
-    </div>
-    <p class="section-sub" style="margin-top:30px;">ומה אמרו המשתתפות והמשתתפים:</p>
+    <p class="section-sub">מה אמרו המשתתפות והמשתתפים:</p>
     <div class="quotes">
       <div class="quote">
         <p class="q">חמי העברת את הסדנא בצורה מעולה.</p>
@@ -446,23 +457,13 @@
         <p class="by"><strong>Noa Treves</strong>Lead Project Manager · <span class="co">CYE</span></p>
       </div>
       <div class="quote">
-        <p class="q">תודה רבה על סדנא מרתקת!</p>
-        <p class="by"><strong>Or Schiffmann</strong>Technical Project Manager · <span class="co">Jifiti</span></p>
-      </div>
-      <div class="quote">
         <p class="q">ההשקעה, ההכנה, האכפתיות, מענה לשאלות ופתיחה מצוינת להמשך עבודה צמודה עם קלוד.</p>
         <p class="by"><strong>Haleli Zetler-Naor</strong>Director Business Operations · Head of Program</p>
       </div>
-      <div class="quote">
-        <p class="q">היה מעשיר ומעניין, רגע של גאווה בקהילה המדהימה הזו.</p>
-        <p class="by"><strong>Michal Regulant</strong>Senior Program Manager · Product & Technology</p>
-      </div>
-      <div class="quote">
-        <p class="q">סשן מעניין, מחכים ואינפורמטיבי - הראת את הקלות היחסית שבשימוש.</p>
-        <p class="by"><strong>Yaniva Sharara</strong>WPM AI Forum</p>
-      </div>
     </div>
   </section>
+
+  <p class="closing fx d6">אשמח להתקדם יחד - לתאם שיחה, לענות על כל שאלה ולסגור פרטים ומועדים. מוזמנת לחזור אליי בכל עת.</p>
 
   <div class="sig fx d6">
     <div class="who-line"><a href="https://www.linkedin.com/in/hemi-ben-lavi/" target="_blank">חמי בן לביא</a></div>

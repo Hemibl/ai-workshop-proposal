@@ -6,30 +6,28 @@
 <title>הצעת מחיר - הנחיית הכשרת Claude Code למגזר הציבורי</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&family=Assistant:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#e7f4ec;
+    --paper:#f4ede1;
     --card:#ffffff;
-    --ink:#16403a;
-    --ink-soft:#3a584f;
-    --muted:#7e9a8e;
-    --accent:#1f9d57;
-    --accent-deep:#15793f;
-    --accent-soft:#d8f0e0;
-    --line:#cde7d5;
-    --line-strong:#b4d9c1;
-    --hero:#16403a;
-    --hero-line:#2c5b51;
+    --ink:#37373f;
+    --ink-soft:#5c5c66;
+    --muted:#9c9488;
+    --accent:#ee8a7c;
+    --accent-deep:#dc6c5b;
+    --accent-soft:#fbe6e1;
+    --line:#e9e1d3;
+    --line-strong:#ddd0bc;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;}
   body{
-    font-family:'Assistant',sans-serif;
+    font-family:'Rubik',sans-serif;
     color:var(--ink);
     background:
-      radial-gradient(120% 80% at 100% 0%, #cfeed9 0%, rgba(207,238,217,0) 55%),
-      radial-gradient(120% 80% at 0% 100%, #c6ecda 0%, rgba(198,236,218,0) 50%),
+      radial-gradient(120% 80% at 100% 0%, #f9e6e0 0%, rgba(249,230,224,0) 55%),
+      radial-gradient(120% 80% at 0% 100%, #efe5d3 0%, rgba(239,229,211,0) 50%),
       var(--paper);
     background-attachment:fixed;
     line-height:1.75;
@@ -49,7 +47,7 @@
   .page{
     max-width:860px;
     margin:0 auto;
-    background:var(--card);
+    background:var(--paper);
     border:1px solid var(--line);
     border-radius:4px;
     padding:68px 72px 56px;
@@ -75,30 +73,28 @@
   .mast{
     display:flex;justify-content:space-between;align-items:flex-end;
     gap:24px;flex-wrap:wrap;
-    background:
-      radial-gradient(140% 120% at 100% 0%, #1e5249 0%, rgba(30,82,73,0) 60%),
-      var(--hero);
-    color:#eafaf0;
-    padding:34px 36px;border-radius:14px;
-    box-shadow:0 16px 36px -22px rgba(22,64,58,.7);
+    padding-bottom:28px;border-bottom:1.5px solid var(--line-strong);
   }
   .eyebrow{
-    font-size:12.5px;font-weight:700;letter-spacing:.32em;
-    color:#7fd6a3;text-transform:uppercase;margin-bottom:14px;
+    display:inline-block;
+    font-size:12px;font-weight:700;letter-spacing:.12em;
+    color:#fff;background:var(--accent);
+    padding:6px 17px;border-radius:999px;text-transform:uppercase;
+    margin-bottom:18px;box-shadow:0 8px 18px -8px rgba(238,138,124,.85);
   }
   h1{
-    font-family:'Frank Ruhl Libre',serif;
-    font-weight:900;font-size:38px;line-height:1.16;letter-spacing:-.01em;
-    color:#f3fbf5;
+    font-family:'Rubik',sans-serif;
+    font-weight:800;font-size:40px;line-height:1.12;letter-spacing:-.02em;
+    color:var(--ink);
   }
   .mast .meta{
-    text-align:left;direction:ltr;font-size:13px;color:#a9cdba;
+    text-align:left;direction:ltr;font-size:13px;color:var(--muted);
     line-height:1.7;white-space:nowrap;
   }
-  .mast .meta b{color:#eafaf0;font-weight:600;}
+  .mast .meta b{color:var(--ink-soft);font-weight:600;}
 
   .lede{
-    font-family:'Assistant',sans-serif;
+    font-family:'Rubik',sans-serif;
     font-size:18px;line-height:1.75;color:var(--ink-soft);font-weight:400;
     margin:34px 0 6px;
   }
@@ -107,13 +103,13 @@
   .brandmark{display:inline-flex;align-items:center;gap:9px;margin-bottom:16px;}
   .brandmark svg{display:block;}
   .bm-text{
-    font-family:'Assistant',sans-serif;font-weight:800;font-size:15px;
+    font-family:'Rubik',sans-serif;font-weight:800;font-size:15px;
     line-height:.92;letter-spacing:.02em;color:var(--ink);text-transform:uppercase;
   }
   .bm-text .dot{color:var(--accent);}
 
   h2{
-    font-family:'Frank Ruhl Libre',serif;
+    font-family:'Rubik',sans-serif;
     font-weight:700;font-size:25px;color:var(--ink);
     margin:54px 0 6px;display:flex;align-items:baseline;gap:14px;
   }
@@ -138,7 +134,7 @@
   /* pricing */
   .cards{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px;}
   .card{
-    position:relative;background:var(--paper);
+    position:relative;background:var(--card);
     border:1px solid var(--line-strong);border-radius:4px;
     padding:30px 30px 32px;transition:transform .25s ease, box-shadow .25s ease;
   }
@@ -157,16 +153,16 @@
     text-transform:uppercase;color:var(--accent);margin-bottom:14px;
   }
   .card h3{
-    font-family:'Frank Ruhl Libre',serif;font-weight:700;
+    font-family:'Rubik',sans-serif;font-weight:700;
     font-size:21px;margin-bottom:4px;color:var(--ink);
   }
   .card .sub{color:var(--muted);font-size:14.5px;margin-bottom:22px;}
   .price{
-    font-family:'Frank Ruhl Libre',serif;font-weight:700;
+    font-family:'Rubik',sans-serif;font-weight:700;
     font-size:30px;line-height:1;color:var(--ink);letter-spacing:-.01em;
   }
   .price .cur{font-size:17px;font-weight:700;}
-  .price .vat{display:block;font-family:'Assistant';font-size:13px;font-weight:600;color:var(--muted);margin-top:9px;letter-spacing:normal;}
+  .price .vat{display:block;font-family:'Rubik';font-size:13px;font-weight:600;color:var(--muted);margin-top:9px;letter-spacing:normal;}
   .card .note{
     font-size:14px;color:var(--ink-soft);margin-top:18px;
     padding-top:16px;border-top:1px solid var(--line);line-height:1.6;
@@ -191,7 +187,7 @@
       linear-gradient(90deg, var(--accent-soft), transparent 60%), var(--card);
   }
   .closed h3{
-    font-family:'Frank Ruhl Libre',serif;font-weight:700;font-size:20px;
+    font-family:'Rubik',sans-serif;font-weight:700;font-size:20px;
     margin-bottom:8px;color:var(--ink);
   }
   .closed p{color:var(--ink-soft);font-size:16px;}
@@ -199,13 +195,13 @@
   /* testimonials */
   .quotes{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px;}
   .quote{
-    background:var(--paper);border:1px solid var(--line);border-radius:4px;
+    background:var(--card);border:1px solid var(--line);border-radius:4px;
     padding:24px 24px 20px;position:relative;
     display:flex;flex-direction:column;
   }
   .quote::before{
     content:"\201D";position:absolute;top:6px;inset-inline-start:18px;
-    font-family:'Frank Ruhl Libre',serif;font-size:52px;line-height:1;
+    font-family:'Rubik',sans-serif;font-size:52px;line-height:1;
     color:var(--accent);opacity:.25;
   }
   .quote .q{
@@ -219,7 +215,7 @@
   }
   .quote .by strong{
     display:block;color:var(--ink);font-size:14.5px;font-weight:700;
-    font-family:'Assistant';
+    font-family:'Rubik';
   }
   .quote .by .co{font-weight:700;color:var(--ink-soft);}
   .quote .q.en{direction:ltr;text-align:left;}

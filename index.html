@@ -307,8 +307,11 @@
       width:100%;padding-top:14px;border-top:1px solid var(--line);
       font-size:13px;
     }
-    .logowall{gap:22px 30px;padding:24px 16px;}
-    .logowall img{max-height:24px;}
+    .logowall{
+      display:grid;grid-template-columns:repeat(3,1fr);
+      justify-items:center;align-items:center;gap:26px 8px;padding:24px 12px;
+    }
+    .logowall img{max-height:22px;max-width:92%;}
 
     .lede{font-size:16.5px;margin-top:26px;}
     h2{font-size:22px;margin:42px 0 6px;}
@@ -324,7 +327,8 @@
     .page{padding:28px 16px 32px;}
     h1{font-size:25px;}
     h2{font-size:20px;}
-    .logowall{gap:20px 24px;}
+    .logowall{gap:22px 6px;padding:22px 10px;}
+    .logowall img{max-height:19px;}
   }
   @media print{
     body{background:var(--paper);padding:0;font-size:11.5pt;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
@@ -456,20 +460,6 @@
       <div class="quote">
         <p class="q">סשן מעניין, מחכים ואינפורמטיבי - הראת את הקלות היחסית שבשימוש.</p>
         <p class="by"><strong>Yaniva Sharara</strong>WPM AI Forum</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="fx d6">
-    <h2><span class="hx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H8l-4 3z"/></svg></span>השלב הבא</h2>
-    <div class="cta">
-      <div class="cta-text">
-        <h3>מעוניינת להתקדם?</h3>
-        <p>אשמח לתאם שיחה, לענות על כל שאלה ולסגור מועדים.</p>
-      </div>
-      <div class="cta-actions">
-        <a class="btn btn-primary" href="tel:0544608119"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L19 17l-1 3a14 14 0 0 1-13-13z"/></svg>חייגו 054-460-8119</a>
-        <a class="btn btn-ghost" href="mailto:hemibenlavi@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5L12 13l8.5-6.5"/></svg>שלחו מייל</a>
       </div>
     </div>
   </section>

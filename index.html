@@ -9,16 +9,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&family=Assistant:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#f6f2ea;
-    --card:#fffdf8;
-    --ink:#1b1d24;
-    --ink-soft:#43464f;
-    --muted:#8d877a;
-    --accent:#b0512f;
-    --accent-deep:#8a3d22;
-    --accent-soft:#f3e7df;
-    --line:#e4ddcf;
-    --line-strong:#d6ccb8;
+    --paper:#e7f4ec;
+    --card:#ffffff;
+    --ink:#16403a;
+    --ink-soft:#3a584f;
+    --muted:#7e9a8e;
+    --accent:#1f9d57;
+    --accent-deep:#15793f;
+    --accent-soft:#d8f0e0;
+    --line:#cde7d5;
+    --line-strong:#b4d9c1;
+    --hero:#16403a;
+    --hero-line:#2c5b51;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;}
@@ -26,8 +28,8 @@
     font-family:'Assistant',sans-serif;
     color:var(--ink);
     background:
-      radial-gradient(120% 80% at 100% 0%, #efe7d8 0%, rgba(239,231,216,0) 55%),
-      radial-gradient(120% 80% at 0% 100%, #efe4ea 0%, rgba(239,228,234,0) 50%),
+      radial-gradient(120% 80% at 100% 0%, #cfeed9 0%, rgba(207,238,217,0) 55%),
+      radial-gradient(120% 80% at 0% 100%, #c6ecda 0%, rgba(198,236,218,0) 50%),
       var(--paper);
     background-attachment:fixed;
     line-height:1.75;
@@ -72,23 +74,28 @@
   /* masthead */
   .mast{
     display:flex;justify-content:space-between;align-items:flex-end;
-    gap:24px;padding-bottom:26px;border-bottom:2px solid var(--ink);
-    flex-wrap:wrap;
+    gap:24px;flex-wrap:wrap;
+    background:
+      radial-gradient(140% 120% at 100% 0%, #1e5249 0%, rgba(30,82,73,0) 60%),
+      var(--hero);
+    color:#eafaf0;
+    padding:34px 36px;border-radius:14px;
+    box-shadow:0 16px 36px -22px rgba(22,64,58,.7);
   }
   .eyebrow{
     font-size:12.5px;font-weight:700;letter-spacing:.32em;
-    color:var(--accent);text-transform:uppercase;margin-bottom:14px;
+    color:#7fd6a3;text-transform:uppercase;margin-bottom:14px;
   }
   h1{
     font-family:'Frank Ruhl Libre',serif;
     font-weight:900;font-size:38px;line-height:1.16;letter-spacing:-.01em;
-    color:var(--ink);
+    color:#f3fbf5;
   }
   .mast .meta{
-    text-align:left;direction:ltr;font-size:13px;color:var(--muted);
+    text-align:left;direction:ltr;font-size:13px;color:#a9cdba;
     line-height:1.7;white-space:nowrap;
   }
-  .mast .meta b{color:var(--ink-soft);font-weight:600;}
+  .mast .meta b{color:#eafaf0;font-weight:600;}
 
   .lede{
     font-family:'Assistant',sans-serif;
@@ -208,18 +215,37 @@
   .quote .by{
     font-size:13px;color:var(--muted);line-height:1.45;
     padding-top:14px;border-top:1px solid var(--line);
+    text-align:left;direction:ltr;
   }
   .quote .by strong{
     display:block;color:var(--ink);font-size:14.5px;font-weight:700;
     font-family:'Assistant';
   }
   .quote .by .co{font-weight:700;color:var(--ink-soft);}
+  .quote .q.en{direction:ltr;text-align:left;}
+
+  /* logo wall */
+  .logowall{
+    background:#fff;border:1px solid var(--line);border-radius:10px;
+    padding:30px 26px;display:grid;grid-template-columns:repeat(5,1fr);
+    gap:30px 22px;align-items:center;margin:4px 0 4px;
+  }
+  .logowall img{
+    display:block;margin:0 auto;max-width:100%;max-height:32px;
+    width:auto;height:auto;object-fit:contain;
+  }
 
   .sig{
-    margin-top:64px;padding-top:26px;border-top:2px solid var(--ink);
+    margin-top:64px;padding-top:26px;border-top:2px solid var(--accent);
     text-align:center;color:var(--muted);font-size:14px;
   }
-  .sig a{color:var(--accent);font-weight:700;text-decoration:none;}
+  .sig .who-line{color:var(--muted);}
+  .sig .who-line a{color:var(--ink);font-weight:700;text-decoration:none;}
+  .sig .sig-contact{
+    margin-top:10px;direction:ltr;font-size:14px;letter-spacing:.01em;
+  }
+  .sig .sig-contact a{color:var(--accent-deep);font-weight:600;text-decoration:none;}
+  .sig .sig-contact .sep{color:var(--line-strong);margin:0 8px;}
 
   @media(max-width:760px){
     body{
@@ -239,10 +265,12 @@
     h1{font-size:28px;line-height:1.2;}
     .mast h1 span{white-space:normal;}      /* allow title to wrap on mobile */
     .mast .meta{
-      text-align:right;direction:ltr;white-space:normal;
+      text-align:left;direction:ltr;white-space:normal;
       width:100%;padding-top:14px;border-top:1px solid var(--line);
       font-size:13px;
     }
+    .logowall{grid-template-columns:repeat(3,1fr);gap:24px 16px;padding:22px 14px;}
+    .logowall img{max-height:26px;}
 
     .lede{font-size:16.5px;margin-top:26px;}
     h2{font-size:22px;margin:42px 0 6px;}
@@ -258,6 +286,7 @@
     .page{padding:28px 16px 32px;}
     h1{font-size:25px;}
     h2{font-size:20px;}
+    .logowall{grid-template-columns:repeat(2,1fr);}
   }
   @media print{
     body{background:var(--paper);padding:0;font-size:11.5pt;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
@@ -279,7 +308,7 @@
   <header class="mast fx d1">
     <div>
       <p class="eyebrow">הצעת מחיר</p>
-      <h1><span style="white-space:nowrap">הנחיית הכשרת Claude Code</span><br>למגזר הציבורי</h1>
+      <h1><span style="white-space:nowrap">Claude Code</span><br>הכשרה למגזר הציבורי</h1>
     </div>
     <div class="meta">
       <b>To:</b> Irit Fischer · Fischer Tech<br>
@@ -288,10 +317,10 @@
     </div>
   </header>
 
-  <p class="lede fx d2">עירית, בהמשך לשיחתנו - מובאת כאן הצעת המחיר שלי לסדנאות הפתוחות: בין לסשן בודד של 3 שעות ובין לסדנה המלאה של 3 המפגשים.</p>
+  <p class="lede fx d2">עירית, בהמשך לשיחתנו - מובאת כאן הצעת המחיר שלי לסדנאות הפתוחות.</p>
 
   <section class="fx d3">
-    <h2>רקע קצר עליי</h2>
+    <h2>קצת עליי</h2>
     <ul class="creds">
       <li><b>מוביל את תחום ה-AI ב-200Apps.</b></li>
       <li><b>Head of Product</b> ומנהל פרויקטים ב-5 השנים האחרונות.</li>
@@ -339,15 +368,28 @@
   </section>
 
   <section class="fx d6">
-    <h2>מה אמרו עליי המשתתפות והמשתתפים</h2>
-    <p class="section-sub">מתוך הוובינרים והסדנאות שהעברתי בנושא Claude Code:</p>
+    <h2>התרשמות מהסדנאות שהעברתי</h2>
+    <p class="section-sub">חלק מהחברות שנציגותיהן השתתפו בסדנאות ובוובינרים שהעברתי:</p>
+    <div class="logowall">
+      <img src="logos/google.png" alt="Google">
+      <img src="logos/nvidia.png" alt="NVIDIA">
+      <img src="logos/mastercard.png" alt="Mastercard">
+      <img src="logos/citi.png" alt="Citi">
+      <img src="logos/philips.png" alt="Philips">
+      <img src="logos/booking.png" alt="Booking.com">
+      <img src="logos/payoneer.png" alt="Payoneer">
+      <img src="logos/mobileye.png" alt="Mobileye">
+      <img src="logos/checkpoint.png" alt="Check Point">
+      <img src="logos/paloalto.png" alt="Palo Alto Networks">
+    </div>
+    <p class="section-sub" style="margin-top:30px;">ומה אמרו המשתתפות והמשתתפים:</p>
     <div class="quotes">
       <div class="quote">
         <p class="q">חמי העברת את הסדנא בצורה מעולה.</p>
         <p class="by"><strong>Maayan Kafry</strong>Program Manager (Lead) AI · <span class="co">Booking.com</span></p>
       </div>
       <div class="quote">
-        <p class="q">An excellent, highly professional session - pushing our community to the next level.</p>
+        <p class="q en">An excellent, highly professional session - pushing our community to the next level.</p>
         <p class="by"><strong>Meirav Waxman</strong>Senior Platform Program Manager · <span class="co">Payoneer</span></p>
       </div>
       <div class="quote">
@@ -378,7 +420,10 @@
   </section>
 
   <div class="sig fx d6">
-    נוצר על ידי <a href="https://www.linkedin.com/in/hemi-ben-lavi/" target="_blank">חמי בן לביא</a>
+    <div class="who-line">נוצר על ידי <a href="https://www.linkedin.com/in/hemi-ben-lavi/" target="_blank">חמי בן לביא</a></div>
+    <div class="sig-contact">
+      <a href="tel:0544608119">054-460-8119</a><span class="sep">·</span><a href="mailto:hemibenlavi@gmail.com">hemibenlavi@gmail.com</a>
+    </div>
   </div>
 
 </div>
